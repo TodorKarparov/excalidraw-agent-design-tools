@@ -162,6 +162,7 @@ During rendering:
 - Use the prescribed service boundary and label treatment.
 - Follow the connector preference order.
 - Represent bidirectional communication with two separate arrows.
+- Structurally bind every semantic arrow at both ends (`startBinding`/`endBinding`; reciprocal shape `boundElements` in native `.excalidraw`). Use distinct anchors for parallel arrows; visual contact is insufficient.
 - Use the prescribed flowchart shapes and terminal-node treatment.
 - Preserve enough whitespace for manual refinement.
 
