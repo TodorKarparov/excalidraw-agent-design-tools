@@ -236,30 +236,6 @@ The diagram should be structurally useful before the user performs a manual visu
 
 ---
 
-## Agent Prompt Template
-
-Use the following pattern when invoking this skill:
-
-> Create an Excalidraw system design diagram for the architecture described below.
->
-> First read `excalidraw-system-design-guidelines.md`.
-> Then:
->
-> 1. Identify the diagram intent.
-> 2. Produce an architecture plan.
-> 3. Produce a layout plan.
-> 4. Render the diagram using the available Excalidraw tools and icon library.
-> 5. Review the result for semantic errors, overlaps, connector problems, and guideline violations.
-> 6. Correct obvious issues before returning the diagram.
->
-> Do not invent unnecessary architecture. State any material assumptions briefly.
->
-> Architecture description:
->
-> `[INSERT ARCHITECTURE DESCRIPTION]`
-
----
-
 ## Guiding Principle
 
 The agent is responsible for architectural clarity and a strong first-pass layout.
