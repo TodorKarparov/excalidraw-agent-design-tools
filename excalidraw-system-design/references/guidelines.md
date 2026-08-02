@@ -100,6 +100,7 @@ Do not fill component shapes.
 - Component shapes should have no fill.
 - Lifecycle colours should be applied consistently throughout the diagram.
 - Do not use these colours decoratively.
+- For wholly greenfield systems, use black outlines throughout; apply lifecycle colours only when the diagram distinguishes change states.
 - A legend should be added when the lifecycle meaning may not be obvious to the audience.
 - Text should remain black unless contrast or another explicit convention requires otherwise.
 
