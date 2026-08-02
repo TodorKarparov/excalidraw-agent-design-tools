@@ -255,49 +255,7 @@ The generated diagram should prioritize correct structure and semantics first, f
 
 ---
 
-## 10. Generation Workflow
-
-For more reliable results, separate diagram planning from rendering.
-
-### Step 1: Architecture plan
-
-Before creating Excalidraw elements, define:
-
-- Diagram intent
-- Main actors
-- Services or logical groups
-- Components inside each group
-- Primary flow
-- Secondary flows
-- Decisions and branches
-- Component lifecycle status
-- Important connector labels
-- Expected terminal states
-
-### Step 2: Layout plan
-
-Choose:
-
-- Default direction based on diagram type
-- Relative placement of services
-- Group boundaries
-- Main connector routes
-- Locations of branches and end nodes
-- Areas that need additional whitespace
-
-### Step 3: Excalidraw rendering
-
-Create the diagram using the visual and structural rules in this document.
-
-### Step 4: Final pass
-
-Check for obvious spacing, overlap, and connector issues.
-
-Manual refinement may still be required.
-
----
-
-## 11. Rule Priority
+## 10. Rule Priority
 
 When rules conflict, apply them in this order:
 
