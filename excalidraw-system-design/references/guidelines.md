@@ -163,7 +163,6 @@ Curved connectors should be treated as a last resort.
 - Avoid crossing connectors where feasible.
 - Keep unrelated connectors visually separated.
 - Do not route connectors through components or labels.
-- Structurally bind every semantic arrow at both ends (`startBinding`/`endBinding`; reciprocal shape `boundElements` in native `.excalidraw`). Use distinct anchors for parallel arrows; visual contact is insufficient.
 - Add connector labels only when they communicate useful information such as a protocol, event, command, or important action.
 
 ### Bidirectional communication
