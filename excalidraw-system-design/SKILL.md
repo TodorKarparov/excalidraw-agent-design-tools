@@ -1,3 +1,8 @@
+---
+name: excalidraw-system-design
+description: Create or modify system design diagrams in Excalidraw - backend and UI architecture, backend processing or user flows, orchestrations, and migration or future-state diagrams. Use when the user asks to draw, diagram, or visualize an architecture in Excalidraw, to convert architecture notes into an Excalidraw diagram, or to edit an existing Excalidraw system diagram. Applies a fixed visual language (lifecycle outline colours, dashed service boundaries, connector preference order, flowchart shapes) defined in references/guidelines.md. Do not use for free-form whiteboarding or non-technical drawings.
+---
+
 # Excalidraw System Design Skill
 
 ## Purpose
@@ -6,7 +11,7 @@ Use this skill when creating or modifying system design diagrams in Excalidraw.
 
 The skill defines the process the agent should follow. The visual and architectural rules themselves are maintained separately in:
 
-`excalidraw-system-design-guidelines.md`
+`references/guidelines.md`
 
 The guidelines are the source of truth. Do not duplicate or reinterpret them unless explicitly asked.
 
@@ -56,7 +61,7 @@ When information is missing, prefer a minimal, clearly labelled assumption over 
 
 ### 1. Read the design guidelines
 
-Read `excalidraw-system-design-guidelines.md` before planning or rendering the diagram.
+Read `references/guidelines.md` before planning or rendering the diagram.
 
 Treat its rules as defaults.
 
