@@ -1,0 +1,17 @@
+service	aliases	path	connector_target_id
+Amazon API Gateway	api gateway,api,rest api	assets/icons/aws/api-gateway.excalidraw.json	uP3GQv8UX-Q902wYn0Lgv
+Amazon Aurora	aurora,rds aurora,relational database	assets/icons/aws/aurora.excalidraw.json	GCu4Q0iF9OFxgOG1OebEh
+Amazon CloudWatch	cloudwatch,cloud watch,monitoring	assets/icons/aws/cloud-watch.excalidraw.json	eby4XvZYSCqxNGIAiZlrT
+Amazon Cognito	cognito,user pool,identity pool	assets/icons/aws/cognito.excalidraw.json	9sIaQqe9HeLb9tqow6T9t
+Amazon DynamoDB	dynamodb,nosql	assets/icons/aws/dynamodb.excalidraw.json	CFal3vMpRKmZ5gN1giwel
+Amazon EventBridge	eventbridge,event bridge,event bus	assets/icons/aws/event-bridge.excalidraw.json	HR7w9YD3Z_te9OmR7Bj8Q
+Amazon EventBridge Pipes	eventbridge pipe,event bridge pipe,pipes	assets/icons/aws/event-bridge-pipe.excalidraw.json	Coz49Gel9Mmw1OyK70Sc4
+Amazon Kinesis	kinesis,data stream,streaming	assets/icons/aws/kinesis.excalidraw.json	1lB9AXy_UtC7w78BZw-rX
+Amazon S3	s3,object storage,bucket	assets/icons/aws/s3.excalidraw.json	r2ApIn9Vhqmxs0wLHJVy1
+Amazon SES	ses,simple email service,email	assets/icons/aws/ses.excalidraw.json	PiV95-RhfDgY_d9RvBlD2
+Amazon SNS	sns,topic,pubsub	assets/icons/aws/sns.excalidraw.json	a3bywZ93qAQ3-SJekn8mF
+Amazon SQS	sqs,queue,message queue	assets/icons/aws/sqs.excalidraw.json	fJl2hCqoDwmblhzig6E3-
+AWS Lambda	lambda,function,serverless	assets/icons/aws/lambda.excalidraw.json	PjdLjZJDCkRdjO5HWekhG
+AWS Step Functions	step functions,sfn,workflow	assets/icons/aws/step-functions.excalidraw.json	U6AVv-tG1mIRRD7vu-JCx
+JavaScript resolver	javascript resolver,js resolver,appsync javascript	assets/icons/aws/javascript-resolver.excalidraw.json	xKnbg_CBIt34rEeN60NkU
+VTL resolver	vtl resolver,velocity template,appsync vtl	assets/icons/aws/vtl-resolver.excalidraw.json	PfGMJ_-YS35aKk_fwvYE4
