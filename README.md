@@ -1,35 +1,65 @@
 # Excalidraw Agent Design Tools
 
-A Claude Code skill that teaches an agent to produce consistent, readable system design diagrams in Excalidraw.
+A skills-only plugin for ChatGPT and Codex that teaches an agent to produce consistent, readable system-design diagrams in Excalidraw. The nested skill remains portable to Claude Code and other skill-aware agents.
 
 ## Contents
 
-```
-excalidraw-system-design/
-├── SKILL.md                  # the process the agent follows
-└── references/
-    └── guidelines.md         # the visual and structural design system (source of truth)
+```text
+.
+├── .agents/plugins/marketplace.json
+└── plugins/excalidraw-agent-design-tools/
+    ├── .codex-plugin/plugin.json
+    └── skills/excalidraw-system-design/
+        ├── SKILL.md
+        └── references/
+            └── guidelines.md
 ```
 
 `SKILL.md` defines *how* to work: identify the diagram intent, plan the architecture, plan the layout, render, then review. `references/guidelines.md` defines *what the result should look like*: default flow direction per diagram type, lifecycle outline colours, dashed service boundaries and labels, connector preference order, flowchart conventions, and spacing rules.
 
-## Install
+## Requirements
+
+The plugin supplies planning and visual conventions. It does not bundle an Excalidraw drawing tool; the host still needs an Excalidraw MCP server or another capability that can create Excalidraw scenes.
+
+## Install in Codex
+
+Add this repository as a marketplace, then install the plugin:
+
+```bash
+codex plugin marketplace add TodorKarparov/excalidraw-agent-design-tools
+codex plugin add excalidraw-agent-design-tools@excalidraw-design-tools
+```
+
+Start a new conversation and ask for an Excalidraw architecture diagram, or invoke `@excalidraw-system-design` explicitly.
+
+## Install in ChatGPT Work
+
+Local marketplace plugins are installed through the ChatGPT desktop app:
+
+1. Add the marketplace using the Codex command above.
+2. Open **Plugins** in ChatGPT Work or Codex.
+3. Select the **Excalidraw Design Tools** marketplace.
+4. Install **Excalidraw System Design** and start a new conversation.
+
+The plugin can then be shared with members of the same ChatGPT workspace from its plugin details page.
+
+## Install in Claude Code
 
 Skills are loaded from `~/.claude/skills` (personal) or `.claude/skills` (per project).
 
 Symlink so the installed skill tracks this repo:
 
 ```bash
-ln -s "$PWD/excalidraw-system-design" ~/.claude/skills/excalidraw-system-design
+ln -s "$PWD/plugins/excalidraw-agent-design-tools/skills/excalidraw-system-design" ~/.claude/skills/excalidraw-system-design
 ```
 
 Or copy it:
 
 ```bash
-cp -R excalidraw-system-design ~/.claude/skills/
+cp -R plugins/excalidraw-agent-design-tools/skills/excalidraw-system-design ~/.claude/skills/
 ```
 
-Then run `/excalidraw-system-design` in Claude Code, or just ask for an Excalidraw architecture diagram and the skill triggers on its own.
+Then run `/excalidraw-system-design` in Claude Code, or just ask for an Excalidraw architecture diagram and let the skill trigger automatically.
 
 ## Use
 
