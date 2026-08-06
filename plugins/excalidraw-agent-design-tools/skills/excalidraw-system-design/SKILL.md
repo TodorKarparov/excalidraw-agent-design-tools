@@ -148,6 +148,10 @@ Rules for icons:
 
 If no suitable icon exists, use a simple labelled component shape.
 
+For AWS service cards, resolve `scripts/prepare-components.ts` relative to this skill and batch all component placements into one `generate` invocation. Use vertical layout by default; use horizontal layout only when explicitly useful or requested. Treat the AWS artwork as a decorative technology marker and the architectural title as independent free text inside the component box, never as a bound shape label. Do not move the artwork based on connector topology.
+
+Use each returned `componentTargets` outer-box tempId for arrow bindings. When same-request bindings are needed, append the arrows to the returned `elements` list and add the complete list in one `edit_scene_content` request.
+
 ---
 
 ### 6. Render in Excalidraw
