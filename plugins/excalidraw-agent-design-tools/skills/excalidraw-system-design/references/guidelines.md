@@ -139,7 +139,49 @@ The intended reading order is:
 
 ---
 
-## 6. Connectors
+## 6. Explanatory Annotations
+
+The diagram should remain understandable without prose wherever ordinary architectural notation is sufficient. Use annotations only where omitting the context would cause a reasonable reader to misunderstand the design or ask, “Why does it work this way?”
+
+Annotations may explain:
+
+- Non-obvious constraints or trade-offs
+- Intentional exceptions to the expected architecture
+- Data-model asymmetries
+- Transitional or migration behaviour
+- Important assumptions that cannot be expressed clearly through ordinary notation
+
+Do not use annotations to:
+
+- Restate component or connector labels
+- Narrate flows already communicated by arrows
+- Compensate for unclear layout
+- Add implementation detail that is irrelevant to the diagram's purpose
+
+### Annotation style
+
+Use a rounded rectangular callout with text inside it.
+
+The callout should:
+
+- Use orange `#f08c00` for both the outline and text
+- Have a transparent background
+- Use a dashed, 4 px outline at 100% opacity
+- Use rounded corners and `roughness: 0`
+- Use handwritten text (`fontFamily: 5`), left-aligned and top-aligned
+- Use a 36 px font with `lineHeight: 1.25`
+- Keep approximately 32–40 px of internal padding
+- Wrap text to a readable width rather than forming one long line
+
+Group the rectangle and text so they move together, but keep the text independent rather than binding it as the rectangle's label. Do not bind semantic flow connectors to annotations.
+
+Place annotations in nearby whitespace, outside the primary flow whenever possible. Keep them close enough to the relevant area that their subject is clear, and do not place them over components, connectors, service boundaries, or labels.
+
+Orange is reserved for explanatory annotations. Never use it to represent component lifecycle status. Unlike service boundaries, which are neutral and subdued at approximately 60% opacity, annotation callouts are orange, rounded, and full-opacity with their text inside.
+
+---
+
+## 7. Connectors
 
 Connectors should communicate direction and relationships with as little visual complexity as possible.
 
@@ -176,7 +218,7 @@ This makes each direction explicit and allows the two interactions to carry diff
 
 ---
 
-## 7. Flowchart Conventions
+## 8. Flowchart Conventions
 
 ### Decision points
 
@@ -218,7 +260,7 @@ Do not reconnect branches purely for visual symmetry.
 
 ---
 
-## 8. Spacing and Overlap
+## 9. Spacing and Overlap
 
 Generated diagrams should leave sufficient space between components, groups, labels, and connectors.
 
@@ -237,7 +279,7 @@ The generated diagram should prioritize correct structure and semantics first, f
 
 ---
 
-## 9. General Drawing Principles
+## 10. General Drawing Principles
 
 - Use the smallest number of shapes necessary to communicate the system.
 - Avoid decorative elements that do not add information.
@@ -252,7 +294,7 @@ The generated diagram should prioritize correct structure and semantics first, f
 
 ---
 
-## 10. Rule Priority
+## 11. Rule Priority
 
 When rules conflict, apply them in this order:
 

@@ -1,6 +1,6 @@
 {
   "name": "excalidraw-agent-design-tools",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Create consistent system-design diagrams in Excalidraw using reusable planning and visual conventions.",
   "author": {
     "name": "Todor Karparov",
