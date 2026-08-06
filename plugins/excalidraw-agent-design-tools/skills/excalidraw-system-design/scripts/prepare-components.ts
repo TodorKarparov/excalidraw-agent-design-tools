@@ -62,7 +62,7 @@ export type Catalog = {
 
 export type IdFactory = (kind: string) => string;
 
-export const DEFAULT_TITLE_FONT_SIZE = 20;
+export const DEFAULT_TITLE_FONT_SIZE = 24;
 export const LIFECYCLE_COLORS: Record<Status, string> = {
   existing: "#1e1e1e",
   changed: "#228be6",
@@ -874,7 +874,8 @@ export function createPreview(
         status: statuses[index % statuses.length],
         x: columnX,
         y: rowY,
-        titleFontSize: index % 6 === 0 ? 22 : 20,
+        titleFontSize:
+          index % 6 === 0 ? DEFAULT_TITLE_FONT_SIZE + 2 : DEFAULT_TITLE_FONT_SIZE,
         layout: "vertical" as const,
       };
       columnX += measureComponent(component, entry).width + columnGap;
@@ -908,7 +909,7 @@ export function createPreview(
     status: statuses[(index + 1) % statuses.length],
     x: 80 + (index % 2) * 1000,
     y: rowY + Math.floor(index / 2) * 280,
-    titleFontSize: 20,
+    titleFontSize: DEFAULT_TITLE_FONT_SIZE,
     layout: "horizontal" as const,
   }));
   const firstHorizontalEntry = resolveService(catalog, horizontalDrafts[0].service);

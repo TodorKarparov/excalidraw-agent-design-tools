@@ -12,6 +12,7 @@ import { join } from "node:path";
 import test from "node:test";
 
 import {
+  DEFAULT_TITLE_FONT_SIZE,
   LIFECYCLE_COLORS,
   createPreview,
   elementBounds,
@@ -32,7 +33,7 @@ function baseComponent(overrides: Record<string, unknown> = {}) {
     status: "new",
     x: 400,
     y: 200,
-    titleFontSize: 20,
+    titleFontSize: DEFAULT_TITLE_FONT_SIZE,
     layout: "vertical",
     ...overrides,
   };
@@ -189,11 +190,29 @@ test("generation does not mutate source assets", () => {
   }
 });
 
+test("default architectural titles have stronger hierarchy than every service label", () => {
+  for (const entry of catalog.entries) {
+    const { artwork, title } = oneComponent({
+      service: entry.service,
+      titleFontSize: undefined,
+    });
+    const serviceLabel = artwork
+      .filter((element) => element.type === "text")
+      .toSorted((left, right) => elementBounds(right).maxY - elementBounds(left).maxY)[0];
+    assert.ok(serviceLabel, entry.service);
+    assert.equal(title.fontSize, DEFAULT_TITLE_FONT_SIZE);
+    assert.ok(
+      title.fontSize >= serviceLabel.fontSize * 1.5,
+      `${entry.service}: ${title.fontSize}px title versus ${serviceLabel.fontSize}px service label`,
+    );
+  }
+});
+
 test("vertical layout puts complete artwork above an independent title without overlap", () => {
   const { box, title, artwork } = oneComponent();
   const artBounds = unionBounds(artwork);
   const titleBounds = elementBounds(title);
-  const tokens = layoutTokens(20);
+  const tokens = layoutTokens(DEFAULT_TITLE_FONT_SIZE);
   assert.ok(artBounds.maxY < titleBounds.minY);
   assert.ok(!overlaps(artBounds, titleBounds));
   assertInsideBox(box, artBounds, tokens.horizontalPadding, tokens.verticalPadding);
@@ -204,7 +223,7 @@ test("horizontal layout puts complete artwork left of the title without overlap"
   const { box, title, artwork } = oneComponent({ layout: "horizontal" });
   const artBounds = unionBounds(artwork);
   const titleBounds = elementBounds(title);
-  const tokens = layoutTokens(20);
+  const tokens = layoutTokens(DEFAULT_TITLE_FONT_SIZE);
   assert.ok(artBounds.maxX < titleBounds.minX);
   assert.ok(!overlaps(artBounds, titleBounds));
   assertInsideBox(box, artBounds, tokens.horizontalPadding, tokens.verticalPadding);
@@ -245,14 +264,14 @@ test("width and height overrides expand the component and preserve centered cont
   assertInsideBox(
     overridden.box,
     unionBounds(overridden.artwork),
-    layoutTokens(20).horizontalPadding,
-    layoutTokens(20).verticalPadding,
+    layoutTokens(DEFAULT_TITLE_FONT_SIZE).horizontalPadding,
+    layoutTokens(DEFAULT_TITLE_FONT_SIZE).verticalPadding,
   );
   assertInsideBox(
     overridden.box,
     elementBounds(overridden.title),
-    layoutTokens(20).horizontalPadding,
-    layoutTokens(20).verticalPadding,
+    layoutTokens(DEFAULT_TITLE_FONT_SIZE).horizontalPadding,
+    layoutTokens(DEFAULT_TITLE_FONT_SIZE).verticalPadding,
   );
 });
 
