@@ -147,13 +147,9 @@ Connectors should communicate direction and relationships with as little visual 
 
 Use one-way arrows by default.
 
-Preferred connector order:
+Prefer straight connectors between facing borders when the path is unobstructed. Otherwise, use an elbow connector with the fewest necessary bends. Multiple connectors may share a border, but bind them at distinct points and avoid overlapping their first or final segments. Use separate anchors for reciprocal flows.
 
-1. Straight arrow
-2. Elbowed arrow with a single bend
-3. More complex routing only when necessary
-
-Curved connectors should be treated as a last resort.
+Use curved connectors only as a last resort.
 
 ### Connector rules
 
