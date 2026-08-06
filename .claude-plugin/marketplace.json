@@ -1,0 +1,15 @@
+{
+  "name": "excalidraw-design-tools",
+  "owner": {
+    "name": "Todor Karparov",
+    "email": "tkarparow@gmail.com",
+    "url": "https://github.com/TodorKarparov"
+  },
+  "description": "Excalidraw skills and helpers for consistent system-design diagrams.",
+  "plugins": [
+    {
+      "name": "excalidraw-agent-design-tools",
+      "source": "./plugins/excalidraw-agent-design-tools"
+    }
+  ]
+}

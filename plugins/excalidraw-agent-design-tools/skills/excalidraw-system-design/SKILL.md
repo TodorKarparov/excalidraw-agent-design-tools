@@ -17,6 +17,14 @@ The guidelines are the source of truth. Do not duplicate or reinterpret them unl
 
 ---
 
+## MCP Prerequisite
+
+Before rendering or using the component helper, confirm that the available Excalidraw MCP supports the scene-content workflow used here: `edit_scene_content`, `tempId` creation and reference, same-request related elements, `startBinding` and `endBinding`, reciprocal `boundElements`, and preservation of helper-generated connector targets.
+
+Do not attempt this workflow against an MCP that only exposes the `read_me` and `create_view` contract, including the current free service at `mcp.excalidraw.com`. Explain that it is not a drop-in replacement and that a compatible scene-content MCP must be configured separately. Do not configure an MCP on the user's behalf unless explicitly asked.
+
+---
+
 ## When to Use
 
 Apply this skill when the user asks to:
@@ -148,7 +156,20 @@ Rules for icons:
 
 If no suitable icon exists, use a simple labelled component shape.
 
-For AWS service cards, resolve `scripts/prepare-components.ts` relative to this skill and batch all component placements into one `generate` invocation. Use vertical layout by default; use horizontal layout only when explicitly useful or requested. Treat the AWS artwork as a decorative technology marker and the architectural title as independent free text inside the component box, never as a bound shape label. Do not move the artwork based on connector topology.
+For AWS service cards, use the bundled `scripts/prepare-components.ts` helper and batch all component placements into one `generate` invocation.
+
+Before running the helper:
+
+1. Run `node --version` and require Node.js `>=22.18.0`.
+2. When that runtime is active, run the TypeScript source directly with `node`; do not compile it or look for a generated JavaScript copy.
+3. In Claude, resolve it from the cached skill directory, for example: `node "${CLAUDE_SKILL_DIR}/scripts/prepare-components.ts" generate <placements.json|->`.
+4. In Codex or another host, resolve the `scripts/prepare-components.ts` path relative to this `SKILL.md` file so it works independently of the current working directory.
+5. In Cowork or another Claude-managed environment, if `nvm` and a suitable Node 22 runtime are already available, you may use `nvm use 22` and then recheck the version.
+6. On a local Claude Code installation without Node `>=22.18.0`, report the prerequisite and ask the user to install or activate it.
+
+Never install Node silently, run `nvm install`, or modify the user's local runtime configuration.
+
+Use vertical layout by default; use horizontal layout only when explicitly useful or requested. Treat the AWS artwork as a decorative technology marker and the architectural title as independent free text inside the component box, never as a bound shape label. Do not move the artwork based on connector topology.
 
 Use each returned `componentTargets` outer-box tempId for arrow bindings. When same-request bindings are needed, append the arrows to the returned `elements` list and add the complete list in one `edit_scene_content` request.
 

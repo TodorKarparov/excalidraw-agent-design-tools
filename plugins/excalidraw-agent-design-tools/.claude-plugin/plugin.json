@@ -1,0 +1,20 @@
+{
+  "name": "excalidraw-agent-design-tools",
+  "displayName": "Excalidraw System Design",
+  "version": "0.2.1",
+  "description": "Create consistent system-design diagrams in Excalidraw using reusable planning and visual conventions.",
+  "author": {
+    "name": "Todor Karparov",
+    "email": "tkarparow@gmail.com",
+    "url": "https://github.com/TodorKarparov"
+  },
+  "homepage": "https://github.com/TodorKarparov/excalidraw-agent-design-tools",
+  "repository": "https://github.com/TodorKarparov/excalidraw-agent-design-tools",
+  "license": "MIT",
+  "keywords": [
+    "excalidraw",
+    "system-design",
+    "architecture",
+    "diagrams"
+  ]
+}
